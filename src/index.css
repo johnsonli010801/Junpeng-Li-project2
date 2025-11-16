@@ -1,0 +1,459 @@
+/* =========================================
+   Global Theme – Soft Deep Blue Sudoku UI
+   ========================================= */
+:root {
+  --bg: #1f2430;             
+  --bg2: #252b38;             
+  --card: #2f3545;            
+  --text: #f3f6fc;            
+  --muted: #aeb7c8;           
+
+  --accent: #5da8ff;        
+  --accent-weak: #3a78c9;
+  --accent-soft: #334c7a;
+
+  --line: #394155;
+  --box: #4b5466;
+
+  --danger: #ff6f87;         
+  --success: #7ed957;        
+  --nav-h: 60px;
+}
+
+/* =========================================
+   Reset & Base
+   ========================================= */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+
+  background: radial-gradient(circle at top, #2b3242 0, #171b25 45%, #11141d 100%);
+  display: flex;
+  flex-direction: column;
+
+  padding-top: var(--nav-h); 
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+.container {
+  width: min(100%, 980px);
+  margin: 16px auto;
+  padding: 0 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #3b4253;
+  border-radius: 18px;
+
+  padding: 24px 28px;
+  margin: 20px auto;
+  width: min(95%, 960px);
+
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+}
+
+
+.center {
+  text-align: center;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.note.success {
+  color: var(--success);
+  margin-top: 12px;
+}
+
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stack {
+  display: grid;
+  gap: 12px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+/* =========================================
+   Buttons
+   ========================================= */
+.btn {
+  appearance: none;
+  border: 1px solid var(--accent-weak);
+  background: var(--accent);
+  color: #06121e;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+
+  transition: background 0.15s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  background: #77bdff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.btn.secondary {
+  background: #262c38;
+  color: var(--text);
+  border-color: #3d4555;
+}
+
+.btn.secondary:hover {
+  background: #323a49;
+}
+
+.buttons-row {
+  margin-top: 18px;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* =========================================
+   Form Fields (Login / Register)
+   ========================================= */
+.field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.field label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  background: #10151e;
+  color: var(--text);
+  border: 1px solid #2c3342;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(93, 168, 255, 0.4);
+}
+
+
+.auth-form {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   Navbar
+   ========================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: #262c38;
+  border-bottom: 1px solid #333a48;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand::after {
+  content: " ⬚";
+  opacity: 0.6;
+  transform: translateY(-1px);
+}
+
+
+.navlinks {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  padding: 8px 10px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+
+  transition: transform 0.15s ease, background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  background-color: #32384a;
+  transform: translateY(-1px);
+}
+
+.nav-link:first-child {
+  margin-left: 0;
+}
+
+.nav-link[aria-current="page"] {
+  background: var(--accent);
+  color: #06121e;
+  border: 1px solid var(--accent-weak);
+}
+
+/* =========================================
+   Tables (High Scores)
+   ========================================= */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.table th,
+.table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #2a2f3a;
+  text-align: left;
+}
+
+.table th {
+  color: var(--muted);
+}
+
+/* =========================================
+   Home Hero
+   ========================================= */
+.hero {
+  text-align: center;
+  margin: 40px auto 10px;
+}
+
+.hero h1 {
+  margin-bottom: 8px;
+}
+
+.hero-img {
+  max-width: 260px;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================
+   Game Selection List (/games)
+   ========================================= */
+.game-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+
+.game-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #373f51;
+}
+
+/* =========================================
+   Timer
+   ========================================= */
+.timer {
+  font-weight: 600;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* =========================================
+   Sudoku Board
+   ========================================= */
+.sudoku-grid {
+  display: grid;
+  gap: 2px;
+  margin: 20px auto 0;
+}
+
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  font-size: calc(var(--cell-size) * 0.45);
+
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid #3d4555;
+
+  background: #2a3040;
+  color: var(--text);
+  outline: none;
+
+  transition: background 0.15s ease, border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+
+.cell:hover:not(.given):not(.locked) {
+  background: #3a4154;
+  cursor: pointer;
+}
+
+.cell.selected {
+  background: #44506b;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(93, 168, 255, 0.6);
+}
+
+
+.cell.given {
+  background: #384056;
+  color: #a5b3cf;
+  font-weight: 700;
+}
+
+
+.cell.invalid {
+  border-color: var(--danger);
+  background: #573040;
+}
+
+.cell.locked {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* =========================================
+   Footer 小字（© Junpeng Li）
+   ========================================= */
+.footer-text {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 16px 0 8px;
+}
+
+/* =========================================
+   Responsive – Mobile (iPhone 12)
+   ========================================= */
+@media (max-width: 420px) {
+
+  :root {
+    --nav-h: 56px;
+  }
+
+  .site-header {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #333a48;
+    border-bottom: none;
+    background: #202632e6;
+    backdrop-filter: blur(12px);
+  }
+
+  body {
+    padding-top: 0;
+    padding-bottom: var(--nav-h);
+  }
+
+  .navbar {
+    padding: 6px 10px;
+    justify-content: space-between;
+  }
+
+
+  .brand {
+    display: none;
+  }
+
+  .navlinks {
+    margin-left: 0;
+    flex: 1;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+
+  .nav-link {
+    padding: 6px 4px;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .card {
+    padding: 18px 16px;
+    margin: 12px auto;
+  }
+
+  .hero {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
+.cell.hint:not(.locked) {
+  box-shadow: 0 0 0 2px rgba(255, 233, 139, 0.9);
+  border-color: #ffe98b;
+  background: #4b4a30;
+}
+
