@@ -8,7 +8,7 @@ The project expands upon Project 1 by replacing the mock game page with a fully 
 ---
 
 ## 🚀 Live Demo (Render / Deployment)
-(Insert your Render or hosting link here)
+[FJ Render Link](https://junpeng-li-project2.onrender.com/)
 
 ---
 
@@ -107,7 +107,7 @@ If I had more time, I would add more advanced Sudoku features typically found in
 One assumption I made was that generating Sudoku boards using backtracking was acceptable as long as performance stayed reasonable for both 6×6 and 9×9 puzzles. I also assumed that a small set of existing puzzle generation rules—such as maintaining uniqueness by counting solutions—would satisfy the requirement for “proper” Sudoku behavior. For UI design, I assumed that the mobile layout did not need complex animations, only clear usability and consistent styling. Finally, I assumed that all mocked pages (rules, scores, login, register) did not require any backend or actual interactivity beyond simple form inputs.
 
 ### 4. Time Taken
-This assignment took approximately **12–15 hours** in total.
+This assignment took approximately **40 hours** in total.
 
 ### 5. Bonus Points Achieved
 - ✔ **LocalStorage (+3)**  
