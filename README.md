@@ -10,6 +10,10 @@ The project expands upon Project 1 by replacing the mock game page with a fully 
 ## 🚀 Live Demo (Render / Deployment)
 [FJ Render Link](https://junpeng-li-project2.onrender.com/)
 
+## Video Recorded
+
+[Video](https://youtu.be/roh6h0Lu2xw)
+
 ---
 
 ## 📌 Features
